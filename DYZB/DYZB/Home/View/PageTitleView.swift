@@ -7,12 +7,17 @@
 //
 
 import UIKit
-
+//定义协议
 protocol PageTitleViewDelegate : class {
     func pageTitleView(titleView:PageTitleView,selectIndex index:Int)
 }
 
-private let kScrolllineH : CGFloat = 2
+//定义常量
+private let kScrolllineH : CGFloat = 3
+private let kNormalColor:(CGFloat,CGFloat,CGFloat) = (85,85,85)
+private let kSelectColor:(CGFloat,CGFloat,CGFloat) = (255,128,0)
+
+//定义PageTitleView类
 
 class PageTitleView: UIView {
     //定议属性
@@ -27,7 +32,6 @@ class PageTitleView: UIView {
     private lazy var scrollView : UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
-        //scrollView.contentInsetAdjustmentBehavior = .never
         scrollView.scrollsToTop = false
         scrollView.isPagingEnabled = false
       //  scrollView.bounds = false
@@ -74,7 +78,7 @@ class PageTitleView: UIView {
         private func setupTitleLabels(){
             
             let labelW:CGFloat = frame.width / CGFloat(titles.count)
-            let labelH:CGFloat = frame.height - kScrolllineH + 25
+            let labelH:CGFloat = frame.height - kScrolllineH
             let labelY:CGFloat = 0
             
             for (index,title) in titles.enumerated(){
@@ -85,7 +89,7 @@ class PageTitleView: UIView {
                 label.text = title
                 label.tag = index
                 label.font = UIFont.systemFont(ofSize: 16.0)
-                label.textColor = UIColor.darkGray
+                label.textColor = UIColor(r:kNormalColor.0,g: kNormalColor.1,b: kNormalColor.2)
                 label.textAlignment = .center
              
                 
@@ -115,11 +119,10 @@ class PageTitleView: UIView {
             addSubview(bottomLine)
             //2.添加scrollLine
             //2.1获取第一个lable
-           guard let firstLabel = titleLabels.first else {return}
-            
+            guard let firstLabel = titleLabels.first else {return}
+            firstLabel.textColor = UIColor(r:kSelectColor.0, g:kSelectColor.1,b:kSelectColor.2)
+            //2.2设置scrollLine的属性
             scrollView.addSubview(scrollLine)
-            
-       
             scrollLine.frame = CGRect(x: firstLabel.frame.origin.x, y:frame.height - kScrolllineH, width: firstLabel.frame.width, height: kScrolllineH)
         }
 }
@@ -131,9 +134,10 @@ extension PageTitleView{
         guard let currentLabel = tapGes.view as? UILabel else { return }
         //2.获取之前的Label
         let oldlabel = titleLabels[currentIndex]
-        //3.切换之前的颜色
-        currentLabel.textColor = UIColor.orange
-        oldlabel.textColor = UIColor.darkGray
+        //3.切换文字的颜色
+        currentLabel.textColor = UIColor(r:kSelectColor.0, g:kSelectColor.1,b:kSelectColor.2)
+        oldlabel.textColor = UIColor(r:kNormalColor.0, g:kNormalColor.1,b:kNormalColor.2)
+        
         //4.保存最新的下标值
         currentIndex = currentLabel.tag
         //5.滚动条位置发生改变
@@ -145,3 +149,26 @@ extension PageTitleView{
         delegate?.pageTitleView(titleView: self, selectIndex: currentIndex)
     }
 }
+//对外暴露方法
+extension PageTitleView{
+    func setTitleWithProgress(progress:CGFloat,souceIndex:Int,targetIndex:Int) {
+        //1.取出sourceLabel/targetLabel
+        let sourceLabel = titleLabels[souceIndex]
+        let targerLabel = titleLabels[targetIndex]
+        //2.处理滚动的逻辑
+        let moveTotalX = targerLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveX = moveTotalX * progress
+        scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+        
+        //3.颜色发生变化
+        //3.1取出变化的范围
+        let colorDelta = (kSelectColor.0-kNormalColor.0,kSelectColor.1-kNormalColor.1,kSelectColor.2-kNormalColor.2)
+        //3.2变化sourceLabel
+        sourceLabel.textColor = UIColor(r:kSelectColor.0-colorDelta.0 * progress,g:kSelectColor.1-colorDelta.1 * progress,b:kSelectColor.2-colorDelta.2 * progress)
+        //3.2变化targetLabel
+        targerLabel.textColor = UIColor(r:kNormalColor.0+colorDelta.0 * progress,g:kNormalColor.1+colorDelta.1 * progress,b:kNormalColor.2+colorDelta.2 * progress)
+        //4.记录最新的index
+        currentIndex = targetIndex
+    }
+}
+

@@ -11,6 +11,7 @@
 		735237CF2457EBE7002E8515 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735237CE2457EBE7002E8515 /* common.swift */; };
 		735237D324582ECB002E8515 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735237D224582ECB002E8515 /* PageContentView.swift */; };
 		735237D5245831F4002E8515 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735237D4245831F4002E8515 /* UIColorExtension.swift */; };
+		73A1147D2459BAC5005C6E72 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A1147C2459BAC5005C6E72 /* RecommendViewController.swift */; };
 		73C5F6BC2456D85000623DC1 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C5F6BB2456D85000623DC1 /* home.storyboard */; };
 		73C5F6BF2456D89500623DC1 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C5F6BD2456D89500623DC1 /* Live.storyboard */; };
 		73C5F6C12456D8BD00623DC1 /* Follor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C5F6C02456D8BD00623DC1 /* Follor.storyboard */; };
@@ -29,11 +30,12 @@
 		735237CE2457EBE7002E8515 /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		735237D224582ECB002E8515 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		735237D4245831F4002E8515 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		73A1147C2459BAC5005C6E72 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		73C5F6BB2456D85000623DC1 /* home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = home.storyboard; sourceTree = "<group>"; };
 		73C5F6BE2456D89500623DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Mail/Base.lproj/Live.storyboard; sourceTree = "<group>"; };
 		73C5F6C02456D8BD00623DC1 /* Follor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Follor.storyboard; path = ../Live/Follor.storyboard; sourceTree = "<group>"; };
 		73C5F6C32456D8E400623DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Mail/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
-		73C5F6C82456F0B200623DC1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = View/HomeViewController.swift; sourceTree = "<group>"; };
+		73C5F6C82456F0B200623DC1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73C5F6CA2456FE2E00623DC1 /* UIBarButtonitemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonitemExtension.swift; sourceTree = "<group>"; };
 		73D46C9A2455210B0021043D /* DYZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D46C9D2455210B0021043D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,8 +94,6 @@
 			children = (
 				73C5F6C72456DB3000623DC1 /* View */,
 				73C5F6C62456DAF400623DC1 /* Control */,
-				73C5F6BB2456D85000623DC1 /* home.storyboard */,
-				73C5F6C82456F0B200623DC1 /* HomeViewController.swift */,
 				73C5F6C52456DAD700623DC1 /* Model */,
 			);
 			path = Home;
@@ -119,6 +119,9 @@
 		73C5F6C62456DAF400623DC1 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				73C5F6BB2456D85000623DC1 /* home.storyboard */,
+				73C5F6C82456F0B200623DC1 /* HomeViewController.swift */,
+				73A1147C2459BAC5005C6E72 /* RecommendViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			files = (
 				73C5F6CB2456FE2E00623DC1 /* UIBarButtonitemExtension.swift in Sources */,
 				73D46C9E2455210B0021043D /* AppDelegate.swift in Sources */,
+				73A1147D2459BAC5005C6E72 /* RecommendViewController.swift in Sources */,
 				735237CF2457EBE7002E8515 /* common.swift in Sources */,
 				735237D5245831F4002E8515 /* UIColorExtension.swift in Sources */,
 				735237D324582ECB002E8515 /* PageContentView.swift in Sources */,

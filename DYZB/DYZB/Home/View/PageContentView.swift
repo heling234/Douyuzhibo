@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol PageContentViewDelegate : class {
+    func pageContentView(contentView : PageContentView,progress : CGFloat,sourceIndex:Int,targetIndex:Int)
+}
+
+
 private  let ContentCellID = "ContentCellID"
-class PageContentView: UIView, UICollectionViewDataSource {
+
+//遵守UICollectionViewDataSource
+class PageContentView: UIView, UICollectionViewDataSource,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return childVcs.count
     }
@@ -26,9 +33,63 @@ class PageContentView: UIView, UICollectionViewDataSource {
         return cell
     }
     
+
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isForbidScrollDelegate = false
+        startoffsetX = scrollView.contentOffset.x
+        
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //0.判断是否点击事件
+        if isForbidScrollDelegate {return}
+        //1.获取数据，滚动进度progress、sourceIndex、targetIndex,判断是滚左还是滚右
+        var progress:CGFloat = 0
+        var sourceIndex:Int = 0
+        var targetIndex:Int = 0
+        //2.判断是滚左还是滚右
+        let currentOffsetX = scrollView.contentOffset.x
+        let scrollViewW = scrollView.bounds.width
+        
+        if currentOffsetX > startoffsetX {//滚左
+            //1.计算progress
+            progress = currentOffsetX/scrollViewW - floor(currentOffsetX/scrollViewW)
+            //2.计算sourceIndex
+            sourceIndex = Int(currentOffsetX/scrollViewW)
+            //3.计算targetIndex
+            targetIndex = sourceIndex + 1
+            if targetIndex >= childVcs.count{
+                targetIndex = childVcs.count - 1
+            }
+            //4.如果完全滚过去应该为1
+            if currentOffsetX - startoffsetX == scrollViewW{
+                progress = 1
+                targetIndex = sourceIndex
+            }
+        }else{//滚右
+            //1.计算progress
+            progress = 1 - (currentOffsetX/scrollViewW - floor(currentOffsetX/scrollViewW))
+            //2.计算targetIndex
+            targetIndex = Int(currentOffsetX/scrollViewW)
+            //3.计算targetIndex
+            sourceIndex = targetIndex + 1
+            if sourceIndex >= childVcs.count{
+                sourceIndex = childVcs.count - 1
+            }
+        }
+        //3.将Progress/sourceIndex/targetIndex传递给titleView
+        delegate?.pageContentView(contentView: self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+    
+
+
+    
     //定议属性
     private var childVcs : [UIViewController]
     private weak var parentViewController : UIViewController?
+    private var startoffsetX:CGFloat = 0
+    private var isForbidScrollDelegate:Bool = false
+    weak var delegate:PageContentViewDelegate?
     
     //增加懒加载属性
     private lazy var collectionView:UICollectionView = {[weak self] in
@@ -44,6 +105,7 @@ class PageContentView: UIView, UICollectionViewDataSource {
         collectionView.isPagingEnabled = true
         collectionView.bounces = false
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellID)
         return collectionView
     }()
@@ -89,8 +151,14 @@ extension PageContentView{
 //对外暴露的方法
 extension PageContentView{
     func setCurrentIndex(currentIndex:Int) {
+        //1.记录需要进行的代理方法
+        isForbidScrollDelegate = true
+        //2.滚到正确的位置
         let offsetX = CGFloat(currentIndex) * collectionView.frame.width
         collectionView.setContentOffset(CGPoint(x:offsetX,y:0), animated: false)
         
     }
 }
+
+
+
