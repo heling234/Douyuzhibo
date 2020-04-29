@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol PageTitleViewDelegate : class {
+    func pageTitleView(titleView:PageTitleView,selectIndex index:Int)
+}
+
 private let kScrolllineH : CGFloat = 2
 
 class PageTitleView: UIView {
     //定议属性
     private var currentIndex :Int = 0
     private var titles:[String]
+    weak var delegate : PageTitleViewDelegate?
+    
     //增加懒属性
     private lazy var titleLabels:[UILabel] = [UILabel]()
     
@@ -130,10 +136,12 @@ extension PageTitleView{
         oldlabel.textColor = UIColor.darkGray
         //4.保存最新的下标值
         currentIndex = currentLabel.tag
-        //5.
+        //5.滚动条位置发生改变
         let scrollLineX = CGFloat(currentLabel.tag) * scrollLine.frame.width
         UIView.animate(withDuration: 0.15) {
             self.scrollLine.frame.origin.x = scrollLineX
         }
+        //6.通知代理
+        delegate?.pageTitleView(titleView: self, selectIndex: currentIndex)
     }
 }

@@ -13,15 +13,16 @@ private let kTitleViewH : CGFloat = 60
 class HomeViewController: UIViewController {
     
     //Mark：懒加载属性
-    private lazy var pageTitleView :PageTitleView = {
+    private lazy var pageTitleView :PageTitleView = { [weak self] in
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
         //titleView.backgroundColor = UIColor.orange
+        titleView.delegate = self
         return titleView
     }()
     
-    private lazy var pageContentView :PageContentView = {
+    private lazy var pageContentView :PageContentView = {[weak self] in
         //1.确定内容的frame
         let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH
         let contentFrame = CGRect(x: 0, y: kStatusBarH+kNavigationBarH+kTitleViewH, width: kScreenW, height: contentH)
@@ -119,6 +120,13 @@ class HomeViewController: UIViewController {
         }
     }
     
+//遵守PageTitleViewDelegate协议
+extension HomeViewController:PageTitleViewDelegate{
+    func pageTitleView(titleView: PageTitleView, selectIndex index: Int) {
+        pageContentView.setCurrentIndex(currentIndex: index)
+        
+    }
+}
 
 
 
