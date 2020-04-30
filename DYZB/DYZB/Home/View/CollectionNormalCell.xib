@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionNormalCell" customModule="DYZB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="168" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="168" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork_Normal" translatesAutoresizingMaskIntoConstraints="NO" id="hpV-nq-kAt">
+                        <rect key="frame" x="0.0" y="0.0" width="168" height="95.5"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskstobounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Puk-0y-4De">
+                        <rect key="frame" x="10" y="102.5" width="52" height="12"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_live_cate_normal" translatesAutoresizingMaskIntoConstraints="NO" id="8w0-jA-3iS">
+                                <rect key="frame" x="0.0" y="0.0" width="14" height="12"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="马哥哥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0x-Y0-I3s">
+                                <rect key="frame" x="21" y="0.0" width="31" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT考教育" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTS-1v-tPQ">
+                        <rect key="frame" x="7" y="80.5" width="36.5" height="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7M-vO-hUD">
+                        <rect key="frame" x="115" y="71" width="44" height="26"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="666在线"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="hpV-nq-kAt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Bol-3z-DL8"/>
+                <constraint firstItem="Puk-0y-4De" firstAttribute="top" secondItem="hpV-nq-kAt" secondAttribute="bottom" constant="7" id="NE2-th-8Qs"/>
+                <constraint firstItem="Puk-0y-4De" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="PGr-qc-vWR"/>
+                <constraint firstItem="Puk-0y-4De" firstAttribute="top" secondItem="hpV-nq-kAt" secondAttribute="bottom" constant="7" id="ai1-7V-cxZ"/>
+                <constraint firstAttribute="trailing" secondItem="hpV-nq-kAt" secondAttribute="trailing" id="brD-5A-VIT"/>
+                <constraint firstItem="Puk-0y-4De" firstAttribute="top" secondItem="wTS-1v-tPQ" secondAttribute="bottom" constant="11" id="fa9-WF-IKB"/>
+                <constraint firstItem="hpV-nq-kAt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fjR-Ai-Z1N"/>
+                <constraint firstItem="wTS-1v-tPQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="fqp-0f-Kgg"/>
+                <constraint firstAttribute="bottom" secondItem="y7M-vO-hUD" secondAttribute="bottom" constant="23" id="jdX-EM-KrV"/>
+                <constraint firstAttribute="trailing" secondItem="y7M-vO-hUD" secondAttribute="trailing" constant="9" id="sOv-sb-hdg"/>
+                <constraint firstAttribute="bottom" secondItem="Puk-0y-4De" secondAttribute="bottom" constant="5.5" id="x9i-cw-3y0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="168" height="120"/>
+            <point key="canvasLocation" x="53.623188405797109" y="72.991071428571431"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="home_live_cate_normal" width="14" height="14"/>
+        <image name="iTunesArtwork_Normal" width="1024" height="1024"/>
+    </resources>
+</document>
