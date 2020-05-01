@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 private let kItemMargin:CGFloat = 10
 private let kItemW = (kScreenW - 3*kItemMargin)/2
 private let kNormalItemH = kItemW * 3/4
