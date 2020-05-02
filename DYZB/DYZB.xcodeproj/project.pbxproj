@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		733A66A9245D70CF003D8075 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A66A8245D70CF003D8075 /* NetworkTools.swift */; };
 		735237CB2457E2D0002E8515 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735237CA2457E2D0002E8515 /* PageTitleView.swift */; };
 		735237CF2457EBE7002E8515 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735237CE2457EBE7002E8515 /* common.swift */; };
 		735237D324582ECB002E8515 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735237D224582ECB002E8515 /* PageContentView.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		3AE4EAC7CE830534356113FD /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
+		733A66A8245D70CF003D8075 /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		735237CA2457E2D0002E8515 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		735237CE2457EBE7002E8515 /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		735237D224582ECB002E8515 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7346AC42245D3E4300FC45C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		73C5F6B42456CF8800623DC1 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +140,7 @@
 		73C5F6B92456D02F00623DC1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7346AC42245D3E4300FC45C1 /* ViewModel */,
 				73C5F6C72456DB3000623DC1 /* View */,
 				73C5F6C62456DAF400623DC1 /* Control */,
 				73C5F6C52456DAD700623DC1 /* Model */,
@@ -144,6 +154,7 @@
 				73C5F6CA2456FE2E00623DC1 /* UIBarButtonitemExtension.swift */,
 				735237CE2457EBE7002E8515 /* common.swift */,
 				735237D4245831F4002E8515 /* UIColorExtension.swift */,
+				733A66A8245D70CF003D8075 /* NetworkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -358,6 +369,7 @@
 				7364CBD1245A833E00EF082C /* CollectionViewPrettyCell.swift in Sources */,
 				73D46CA02455210B0021043D /* SceneDelegate.swift in Sources */,
 				7364CBCD245A6ECE00EF082C /* CollectionNormalCell.swift in Sources */,
+				733A66A9245D70CF003D8075 /* NetworkTools.swift in Sources */,
 				73C5F6C92456F0B200623DC1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

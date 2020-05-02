@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 
 private let kItemMargin:CGFloat = 10
 private let kItemW = (kScreenW - 3*kItemMargin)/2
@@ -92,8 +92,10 @@ class RecommendViewController: UIViewController, UICollectionViewDataSource, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //设置UI界面
+        //1.设置UI界面
         setupUI()
+        //2.发送网络请求
+        loadData()
 
 
     }
@@ -104,5 +106,18 @@ extension RecommendViewController {
     private func setupUI(){
         //1.将UICollectionView添加到控制顺器的View中
         view.addSubview(collectionView)
+    }
+}
+ //发送网络请求数据
+extension RecommendViewController{
+    private func loadData(){
+    
+        NetworkTool.requestData(URLSting:"http://httpbin.org/get",type:.get){
+            (result) in
+            print (result)
+        }
+           NetworkTool.requestData(URLSting:  "http://httpbin.org/post", type: .post,parmeters: ["name":"why"]){ (result) in
+                print(result)
+            }
     }
 }
