@@ -64,6 +64,8 @@ class RecommendViewController: UIViewController, UICollectionViewDataSource, UIC
     
 
     //MARK：-增加懒加载属性
+    private lazy var recommendVM : RecommendViewModel = RecommendViewModel()
+    
     private lazy var collectionView:UICollectionView = {[unowned self] in
        // 1.创建布局流水布局
         let layout = UICollectionViewFlowLayout()
@@ -111,13 +113,7 @@ extension RecommendViewController {
  //发送网络请求数据
 extension RecommendViewController{
     private func loadData(){
-    
-        NetworkTool.requestData(URLSting:"http://httpbin.org/get",type:.get){
-            (result) in
-            print (result)
-        }
-           NetworkTool.requestData(URLSting:  "http://httpbin.org/post", type: .post,parmeters: ["name":"why"]){ (result) in
-                print(result)
-            }
+        recommendVM.requestData()
     }
 }
+

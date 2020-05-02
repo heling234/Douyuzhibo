@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		733A66A9245D70CF003D8075 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A66A8245D70CF003D8075 /* NetworkTools.swift */; };
+		733A66AB245D9394003D8075 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A66AA245D9394003D8075 /* RecommendViewModel.swift */; };
+		733A66B3245D9B74003D8075 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A66B2245D9B74003D8075 /* NSDateExtension.swift */; };
 		735237CB2457E2D0002E8515 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735237CA2457E2D0002E8515 /* PageTitleView.swift */; };
 		735237CF2457EBE7002E8515 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735237CE2457EBE7002E8515 /* common.swift */; };
 		735237D324582ECB002E8515 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735237D224582ECB002E8515 /* PageContentView.swift */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		3AE4EAC7CE830534356113FD /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
 		733A66A8245D70CF003D8075 /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		733A66AA245D9394003D8075 /* RecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		733A66B2245D9B74003D8075 /* NSDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		735237CA2457E2D0002E8515 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		735237CE2457EBE7002E8515 /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		735237D224582ECB002E8515 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		7346AC42245D3E4300FC45C1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				733A66AA245D9394003D8075 /* RecommendViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				735237CE2457EBE7002E8515 /* common.swift */,
 				735237D4245831F4002E8515 /* UIColorExtension.swift */,
 				733A66A8245D70CF003D8075 /* NetworkTools.swift */,
+				733A66B2245D9B74003D8075 /* NSDateExtension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -364,6 +370,7 @@
 				73A1147D2459BAC5005C6E72 /* RecommendViewController.swift in Sources */,
 				735237CF2457EBE7002E8515 /* common.swift in Sources */,
 				735237D5245831F4002E8515 /* UIColorExtension.swift in Sources */,
+				733A66B3245D9B74003D8075 /* NSDateExtension.swift in Sources */,
 				735237D324582ECB002E8515 /* PageContentView.swift in Sources */,
 				735237CB2457E2D0002E8515 /* PageTitleView.swift in Sources */,
 				7364CBD1245A833E00EF082C /* CollectionViewPrettyCell.swift in Sources */,
@@ -371,6 +378,7 @@
 				7364CBCD245A6ECE00EF082C /* CollectionNormalCell.swift in Sources */,
 				733A66A9245D70CF003D8075 /* NetworkTools.swift in Sources */,
 				73C5F6C92456F0B200623DC1 /* HomeViewController.swift in Sources */,
+				733A66AB245D9394003D8075 /* RecommendViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
