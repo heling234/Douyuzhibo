@@ -23,20 +23,18 @@ private let kHeaderViewID = "kHeaderViewID"
 class RecommendViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendVM.anchorGroups.count
     }
 
     func collectionView(_ collectionView:UICollectionView,numberOfItemsInSection section:Int)->Int{
-        if section == 0 {
-            return 8
-        }
-        return 4
+        let group = recommendVM.anchorGroups[section]
+        return group.anchors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         //1.取出section的headerView
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
-        //headerView.backgroundColor = UIColor.green
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
+        headerView.group  = recommendVM.anchorGroups[indexPath.section]
         return headerView
         
     }
@@ -113,7 +111,10 @@ extension RecommendViewController {
  //发送网络请求数据
 extension RecommendViewController{
     private func loadData(){
-        recommendVM.requestData()
+        recommendVM.requestData(){
+            self.collectionView.reloadData()
+        }
+            
     }
 }
 

@@ -29,7 +29,7 @@ class NetworkTool {
                 return
             }
             //4.将结果回调出去
-            finishedCallback(response.result as AnyObject)
+            finishedCallback(response.value as AnyObject)
         }
     }
 }
