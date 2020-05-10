@@ -13,6 +13,7 @@ class CollectionHeaderView: UICollectionReusableView {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLable: UILabel!
     //定议模型属性
+    
     var group : AnchorGroup?{
         didSet{
             titleLable.text = group?.tag_name

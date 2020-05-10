@@ -27,7 +27,8 @@ class AnchorModel: NSObject {
     @objc var online :Int = 0
     
     //所以城市
-    var anchor_city :String = ""
+    @objc var anchor_city :String = ""
+    
     
     init(dict : [String : NSObject]) {
         super.init()

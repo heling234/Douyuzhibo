@@ -13,6 +13,7 @@ class RecommendViewModel{
     //
     
     lazy var anchorGroups : [AnchorGroup] = [AnchorGroup]()
+    lazy var cycleModels:[CycleModel] = [CycleModel]()
     private lazy var bigdataGroup : AnchorGroup = AnchorGroup()
     private lazy var prettyGroup : AnchorGroup = AnchorGroup()
 }
@@ -44,7 +45,7 @@ extension RecommendViewModel{
             }
             //1.3.3离开组
             grouppress.leave()
-            print("请求到1组数据")
+            //print("请求到1组数据")
         }
         //2.请求第二部分颜值数据
         grouppress.enter()
@@ -64,7 +65,7 @@ extension RecommendViewModel{
                  self.prettyGroup.anchors.append(anchor)
             }
             grouppress.leave()
-            print("请求到2组数据")
+            //print("请求到2组数据")
         }
         
         //3.请求2-12部分游戏数据
@@ -84,14 +85,30 @@ extension RecommendViewModel{
                     self.anchorGroups.append(group)
                 }
                 grouppress.leave()
-                print("请求到2-12部分")
+                //print("请求到2-12部分")
             }
             grouppress.notify(queue: .main) {
                 self.anchorGroups.insert(self.prettyGroup,at:0)
                 self.anchorGroups.insert(self.bigdataGroup,at:0)
                 finishCallback()
             }
-            //finishCallback()
+        }
+    //4.请求无线轮播数据
+    func requestCycleData(finishCallback:@escaping() -> ()) {
+        NetworkTool.requestData(URLSting: "http://www.douyutv.com/api/v1/slide/6", type: methodType.get, parmeters: ["version":"6.101"]) { (result) in
+            //1.
+            guard let resultDict = result as? [String:NSObject] else {
+                return
+            }
+            //2.根据data的key获取数据
+            guard let dataArray = resultDict["data"] as? [[String :NSObject]] else {return}
+            
+            //3.字典转模型对象
+            for dict in dataArray{
+                self.cycleModels.append(CycleModel(dict:dict))
+            }
+           finishCallback()
         }
     }
+}
 

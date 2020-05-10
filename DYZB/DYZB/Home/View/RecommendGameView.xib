@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendGameView" customModule="DYZB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aPD-Ti-Y8e">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fka-0g-TfE">
+                        <size key="itemSize" width="90" height="80"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="KgZ-8R-5WH"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="M4n-mt-1Px"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aPD-Ti-Y8e" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="065-K8-Gnl"/>
+                <constraint firstItem="aPD-Ti-Y8e" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9Uc-cH-vlU"/>
+                <constraint firstItem="aPD-Ti-Y8e" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Aiq-Bj-2sa"/>
+                <constraint firstItem="aPD-Ti-Y8e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="E0e-0r-8ru"/>
+                <constraint firstAttribute="bottom" secondItem="aPD-Ti-Y8e" secondAttribute="bottom" id="MXQ-gY-fwK"/>
+                <constraint firstItem="aPD-Ti-Y8e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OO5-pc-LiS"/>
+                <constraint firstItem="aPD-Ti-Y8e" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Zq9-TO-O3t"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aPD-Ti-Y8e" secondAttribute="trailing" id="gDd-r4-29z"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="collectionView" destination="aPD-Ti-Y8e" id="dJa-C2-QOv"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+        </view>
+    </objects>
+</document>

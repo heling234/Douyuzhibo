@@ -9,6 +9,7 @@
 import UIKit
 
 class AnchorGroup: NSObject {
+    //game对应属标
     @objc var icon_url : String = ""
     //小图标地址
     @objc var small_icon_url : String = ""
@@ -31,9 +32,7 @@ class AnchorGroup: NSObject {
     //private lazy var anchors : [AnchorModel] = [AnchorModel] ()
    @objc lazy var anchors : [AnchorModel] = [AnchorModel] ()
     //构造函数
-    override init() {
-     
-    }
+    override init() {}
     
     init(dict : [String : NSObject]) {
         // print(dict["tag_name"]!)
