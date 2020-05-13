@@ -55,11 +55,12 @@ extension RecommendViewModel{
             //2.2根据data该key,获取数值
             guard let dataArray = resultDict["data"] as?[[String:NSObject]] else {return}
             //2.3遍历字典，并且转成模型对象
-            //2.3.2设置组的属性
+            
+            //2.3.1设置组的属性
             self.prettyGroup.tag_name = "颜值"
             self.prettyGroup.icon_name = "home_header_phone"
             
-            //获取主播所有数据
+            //2.3.2获取主播所有数据
             for dict in dataArray {
                 let anchor = AnchorModel(dict: dict)
                  self.prettyGroup.anchors.append(anchor)
@@ -78,12 +79,14 @@ extension RecommendViewModel{
                 //2.根据data该key,获取数值
                 guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
                 //3.遍历数组，获取字典，并且将字典转成模型对象
-                //print (dataArray.count)
+               //print (dataArray.count)
                 
                 for dict in dataArray {
                     let group = AnchorGroup(dict:dict) //类实例化,并获值给group
+                    //print(group.tag_name)
                     self.anchorGroups.append(group)
                 }
+                
                 grouppress.leave()
                 //print("请求到2-12部分")
             }

@@ -11,19 +11,17 @@ import Kingfisher
 class CollectionViewGameCell: UICollectionViewCell {
     
     @IBOutlet weak var iconImageView: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
+    
     //定义数据模型
-    var group :AnchorGroup?{
+    var baseGame :BaseGameModel?{
         didSet{
-           
-            let iconURL = NSURL(string: group?.icon_url ?? "")!
-            titleLabel.text = group?.tag_name
+            let iconURL = NSURL(string: baseGame?.icon_url ?? "")!
+            titleLabel.text = baseGame?.tag_name
             iconImageView.kf.setImage(with: ImageResource(downloadURL: iconURL as URL),placeholder: UIImage(named: "home_more_btn"))
         }
     }
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

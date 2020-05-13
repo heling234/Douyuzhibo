@@ -11,8 +11,8 @@ import Alamofire
 
 private let kItemMargin:CGFloat = 10
 private let kItemW = (kScreenW - 3*kItemMargin)/2
-private let kNormalItemH = kItemW * 6/10
-private let kPrettyItemH = kItemW * 4/3
+private let kNormalItemH = kItemW * 3/4
+private let kPrettyItemH = kItemW * 3/3
 private let kHeaderViewH:CGFloat = 50
 
 private let  kCycleViewH = kScreenW * 3/8
@@ -130,7 +130,7 @@ class RecommendViewController: UIViewController, UICollectionViewDataSource, UIC
 
 //MKRK:-设置UI界面内容
 extension RecommendViewController {
-    private func setupUI(){
+    fileprivate func setupUI(){
         //1.将UICollectionView添加到控制顺器的View中
         view.addSubview(collectionView)
         
