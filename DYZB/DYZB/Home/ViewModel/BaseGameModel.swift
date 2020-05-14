@@ -9,12 +9,9 @@
 import UIKit
 
 class BaseGameModel: NSObject {
-
-    //  //-定义属性
+    //-定义属性
         @objc var tag_name:String = ""
         @objc var icon_url:String = ""
-        @objc var small_icon_url : String = ""
-        @objc var icon_name : String = "home_header_normal"
         @objc var pic_url:String = ""
     
     
@@ -26,6 +23,6 @@ class BaseGameModel: NSObject {
             super.init()
             setValuesForKeys(dict)
         }
-        override func setValue(_ value: Any?, forKey key: String) {}
+        override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     
 }

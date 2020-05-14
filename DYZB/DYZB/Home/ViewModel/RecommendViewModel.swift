@@ -82,13 +82,13 @@ extension RecommendViewModel{
                //print (dataArray.count)
                 
                 for dict in dataArray {
-                    let group = AnchorGroup(dict:dict) //类实例化,并获值给group
+                    //let group = AnchorGroup(dict:dict) //类实例化,并获值给group
                     //print(group.tag_name)
-                    self.anchorGroups.append(group)
+                    self.anchorGroups.append(AnchorGroup(dict:dict))
                 }
                 
                 grouppress.leave()
-                //print("请求到2-12部分")
+                //print("请求到2-12部分游戏数据")
             }
             grouppress.notify(queue: .main) {
                 self.anchorGroups.insert(self.prettyGroup,at:0)

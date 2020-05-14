@@ -151,7 +151,15 @@ extension RecommendViewController{
             //1.1展示推荐数据
             self.collectionView.reloadData()
             //1.2将数据传递给gameview
-            self.gameView.groups = self.recommendVM.anchorGroups
+            var groups = self.recommendVM.anchorGroups
+            //1.2.1移除两条数据
+            groups.removeFirst()
+            groups.removeFirst()
+            //1.2.2添加更多数据
+            let moreGroup = AnchorGroup()
+            moreGroup.tag_name = "更多"
+            groups.append(moreGroup)
+            self.gameView.groups = groups
         }
         //2.请求轮播数据
         recommendVM.requestCycleData {

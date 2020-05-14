@@ -10,6 +10,7 @@ import UIKit
 
 class CollectionHeaderView: UICollectionReusableView {
 
+    @IBOutlet weak var moreBtn: UIButton!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLable: UILabel!
     //定议模型属性
@@ -25,5 +26,12 @@ class CollectionHeaderView: UICollectionReusableView {
         
         // Initialization code
     }
-    
 }
+
+//从xib中快速创建的类方法
+extension CollectionHeaderView{
+    class func collectionHeaderView()->CollectionHeaderView{
+        return Bundle.main.loadNibNamed("CollectionHeaderView", owner: nil, options: nil)?.first as! CollectionHeaderView
+    }
+}
+

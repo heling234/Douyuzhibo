@@ -9,9 +9,7 @@
 import UIKit
 
 class AnchorGroup: BaseGameModel {
-    //定义模型对象数组
-    @objc lazy var anchors : [AnchorModel] = [AnchorModel] ()
-    
+
     //该组中对应的房间信息
     @objc var room_list :[[String:NSObject]]? {
            didSet {
@@ -22,7 +20,14 @@ class AnchorGroup: BaseGameModel {
            }
        }
         
-
+    //组显示图标
+    @objc var small_icon_url : String = ""
+    @objc var icon_name : String = "home_header_normal"
+     
+    //定义模型对象数组
+    @objc lazy var anchors : [AnchorModel] = [AnchorModel]()
+    
+    
     //组显示标题
     //var tag_name : String = "" //父类有定义
     //game对应属标

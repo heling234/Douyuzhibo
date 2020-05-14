@@ -34,6 +34,8 @@
 		73A1147D2459BAC5005C6E72 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A1147C2459BAC5005C6E72 /* RecommendViewController.swift */; };
 		73A114802459F6A2005C6E72 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A1147E2459F6A2005C6E72 /* CollectionHeaderView.swift */; };
 		73A114812459F6A2005C6E72 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A1147F2459F6A2005C6E72 /* CollectionHeaderView.xib */; };
+		73A4CBFA246D9C7D005980C6 /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A4CBF9246D9C7D005980C6 /* AmuseViewController.swift */; };
+		73A4CBFC246DA670005980C6 /* AmuseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A4CBFB246DA670005980C6 /* AmuseViewModel.swift */; };
 		73B3EAF224685E35000A5125 /* RecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3EAF124685E35000A5125 /* RecommendGameView.swift */; };
 		73B3EAF424685E4F000A5125 /* RecommendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B3EAF324685E4F000A5125 /* RecommendGameView.xib */; };
 		73B3EAFF24688878000A5125 /* CollectionViewGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3EAFD24688878000A5125 /* CollectionViewGameCell.swift */; };
@@ -94,6 +96,8 @@
 		73A1147C2459BAC5005C6E72 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		73A1147E2459F6A2005C6E72 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		73A1147F2459F6A2005C6E72 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
+		73A4CBF9246D9C7D005980C6 /* AmuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
+		73A4CBFB246DA670005980C6 /* AmuseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewModel.swift; sourceTree = "<group>"; };
 		73B3EAF124685E35000A5125 /* RecommendGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendGameView.swift; sourceTree = "<group>"; };
 		73B3EAF324685E4F000A5125 /* RecommendGameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendGameView.xib; sourceTree = "<group>"; };
 		73B3EAFD24688878000A5125 /* CollectionViewGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGameCell.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 			children = (
 				733A66AA245D9394003D8075 /* RecommendViewModel.swift */,
 				736C6945246ADA8E00FBB1BA /* GameViewModel.swift */,
+				73A4CBFB246DA670005980C6 /* AmuseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				736C6943246AC04400FBB1BA /* UIColor_Extension.swift */,
 				73A1147C2459BAC5005C6E72 /* RecommendViewController.swift */,
 				73C5F6BB2456D85000623DC1 /* home.storyboard */,
+				73A4CBF9246D9C7D005980C6 /* AmuseViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -440,9 +446,11 @@
 				735237CF2457EBE7002E8515 /* common.swift in Sources */,
 				735237D5245831F4002E8515 /* UIColorExtension.swift in Sources */,
 				733A66B3245D9B74003D8075 /* NSDateExtension.swift in Sources */,
+				73A4CBFA246D9C7D005980C6 /* AmuseViewController.swift in Sources */,
 				735237D324582ECB002E8515 /* PageContentView.swift in Sources */,
 				7343784B24646C4700697655 /* RecommendCycleView.swift in Sources */,
 				738FA93E24601B9100E4028A /* AnchorModel.swift in Sources */,
+				73A4CBFC246DA670005980C6 /* AmuseViewModel.swift in Sources */,
 				738FA94024601C9900E4028A /* AnchorGroup.swift in Sources */,
 				735237CB2457E2D0002E8515 /* PageTitleView.swift in Sources */,
 				7364CBD1245A833E00EF082C /* CollectionViewPrettyCell.swift in Sources */,

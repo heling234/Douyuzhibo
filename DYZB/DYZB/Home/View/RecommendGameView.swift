@@ -11,8 +11,9 @@ private let kGameCellID = "kGameCellID"
 private let kEdgeInsetMargin : CGFloat = 10
 class RecommendGameView: UIView {
 //定义数据的属性
-    var groups:[AnchorGroup]?{
+    var groups:[BaseGameModel]?{
         didSet{
+            /*
             //1.移除两组数据
             groups?.removeFirst()
             groups?.removeFirst()
@@ -21,8 +22,10 @@ class RecommendGameView: UIView {
             let moreGroup = AnchorGroup()
             moreGroup.tag_name = "更多"
             groups?.append(moreGroup)
+  */
             //2.刷新表格
             collectionView.reloadData()
+
         }
     }
     
