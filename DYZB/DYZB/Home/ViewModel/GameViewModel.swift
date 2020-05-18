@@ -14,7 +14,7 @@ class GameViewModel:NSObject {
 
 extension GameViewModel{
     func loadAllGameData(finishedCallback : @escaping()->()) {
-        NetworkTool.requestData(URLSting: "http://capi.douyucdn.cn/api/v1/getColumnDetail", type: methodType.get,parmeters: nil) { (result) in
+        NetworkTool.requestData(URLSting: "http://capi.douyucdn.cn/api/v1/getColumnDetail", type: methodType.get,parameters: ["shortName":"PCgame"]) { (result) in
            // ["shortName":"game"]
         
             //1.获取到数据

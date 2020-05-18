@@ -9,10 +9,10 @@
 import UIKit
 import SwiftyJSON
 
-class RecommendViewModel{
+class RecommendViewModel : BaseViewModel {
     //
     
-    lazy var anchorGroups : [AnchorGroup] = [AnchorGroup]()
+   // lazy var anchorGroups : [AnchorGroup] = [AnchorGroup]()
     lazy var cycleModels:[CycleModel] = [CycleModel]()
     private lazy var bigdataGroup : AnchorGroup = AnchorGroup()
     private lazy var prettyGroup : AnchorGroup = AnchorGroup()
@@ -28,7 +28,7 @@ extension RecommendViewModel{
         let grouppress = DispatchGroup()
         //1.请求第一部分推荐数据
         grouppress.enter()
-        NetworkTool.requestData(URLSting: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", type: .get, parmeters: ["time":NSDate.getCurrentTime()]) { (result) in
+        NetworkTool.requestData(URLSting: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", type: .get, parameters: ["time":NSDate.getCurrentTime()]) { (result) in
             //1.1 将result转成字典类型
                 guard let resultDict = result as? [String:NSObject] else {return}
             //1.2根据data该key,获取数值
@@ -49,7 +49,7 @@ extension RecommendViewModel{
         }
         //2.请求第二部分颜值数据
         grouppress.enter()
-        NetworkTool.requestData(URLSting: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", type: .get, parmeters: parameters) { (result) in
+        NetworkTool.requestData(URLSting: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", type: .get, parameters: parameters) { (result) in
             //2.1 将result转成字典类型
             guard let resultDict = result as? [String:NSObject] else {return}
             //2.2根据data该key,获取数值
@@ -72,24 +72,13 @@ extension RecommendViewModel{
         //3.请求2-12部分游戏数据
         //http://capi.douyucdn.cn/api/v1/getHotCate?limit=4&offset=0&time =  print(NSDate.getCurrentTime())
         //  NetworkTool.requestData(URLSting:"http://capi.douyucdn.cn/api/v1/getHotCate?", type: methodType.get) { (result) in
+        
             grouppress.enter()
-            NetworkTool.requestData(URLSting: "http://capi.douyucdn.cn/api/v1/getHotCate", type: methodType.get, parmeters: parameters) { (result) in
-                //1.将result转成字典类型
-                guard let resultDict = result as? [String : NSObject] else { return }
-                //2.根据data该key,获取数值
-                guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
-                //3.遍历数组，获取字典，并且将字典转成模型对象
-               //print (dataArray.count)
-                
-                for dict in dataArray {
-                    //let group = AnchorGroup(dict:dict) //类实例化,并获值给group
-                    //print(group.tag_name)
-                    self.anchorGroups.append(AnchorGroup(dict:dict))
-                }
-                
-                grouppress.leave()
-                //print("请求到2-12部分游戏数据")
-            }
+        loadAnchorData(URLString: "http://capi.douyucdn.cn/api/v1/getHotCate?", parameters: parameters) {
+            grouppress.leave()
+        }
+        
+            //所有的数据都请求到，之后进行排序
             grouppress.notify(queue: .main) {
                 self.anchorGroups.insert(self.prettyGroup,at:0)
                 self.anchorGroups.insert(self.bigdataGroup,at:0)
@@ -98,7 +87,7 @@ extension RecommendViewModel{
         }
     //4.请求无线轮播数据
     func requestCycleData(finishCallback:@escaping() -> ()) {
-        NetworkTool.requestData(URLSting: "http://www.douyutv.com/api/v1/slide/6", type: methodType.get, parmeters: ["version":"6.101"]) { (result) in
+        NetworkTool.requestData(URLSting: "http://www.douyutv.com/api/v1/slide/6", type: methodType.get, parameters: ["version":"6.101"]) { (result) in
             //1.
             guard let resultDict = result as? [String:NSObject] else {
                 return

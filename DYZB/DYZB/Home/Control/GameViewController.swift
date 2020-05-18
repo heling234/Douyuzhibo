@@ -17,7 +17,7 @@ private let kHeaderViewW:CGFloat = kScreenW
 private let kGameViewH : CGFloat = 90
 
 private let kGameCellID = "kGameCellID"
-private let kHeaderViewID = "kHeaderViewID"
+// private let kHeaderViewID = "kHeaderViewID"
 
 
 class GameViewController: UIViewController, UICollectionViewDataSource {

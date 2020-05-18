@@ -51,6 +51,8 @@
 		73D46CA52455210B0021043D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73D46CA32455210B0021043D /* Main.storyboard */; };
 		73D46CA72455210C0021043D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73D46CA62455210C0021043D /* Assets.xcassets */; };
 		73D46CAA2455210C0021043D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73D46CA82455210C0021043D /* LaunchScreen.storyboard */; };
+		73F4ECB7247278460010A715 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4ECB6247278460010A715 /* BaseViewModel.swift */; };
+		73F4ECBA24727B730010A715 /* BaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4ECB924727B730010A715 /* BaseAnchorViewController.swift */; };
 		9A3DA91D07BB65E1115611E4 /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE8A0D8FF3384B146F9B7E3 /* Pods_DYZB.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,8 @@
 		73D46CA62455210C0021043D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73D46CA92455210C0021043D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73D46CAB2455210D0021043D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73F4ECB6247278460010A715 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		73F4ECB924727B730010A715 /* BaseAnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnchorViewController.swift; sourceTree = "<group>"; };
 		75FE4446320A3344EDF26A99 /* Pods-DYZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.debug.xcconfig"; path = "Target Support Files/Pods-DYZB/Pods-DYZB.debug.xcconfig"; sourceTree = "<group>"; };
 		DCE8A0D8FF3384B146F9B7E3 /* Pods_DYZB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYZB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -174,8 +178,8 @@
 		73C5F6B52456CFB000623DC1 /* Mail */ = {
 			isa = PBXGroup;
 			children = (
-				73D46CA32455210B0021043D /* Main.storyboard */,
-				736C693B246A82C800FBB1BA /* BaseViewController.swift */,
+				73F4ECB524726E420010A715 /* ViewModel */,
+				73F4ECB824727AFB0010A715 /* Controller */,
 			);
 			path = Mail;
 			sourceTree = "<group>";
@@ -297,6 +301,24 @@
 				73D46CA62455210C0021043D /* Assets.xcassets */,
 			);
 			path = DYZB;
+			sourceTree = "<group>";
+		};
+		73F4ECB524726E420010A715 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				73F4ECB6247278460010A715 /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		73F4ECB824727AFB0010A715 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				73D46CA32455210B0021043D /* Main.storyboard */,
+				736C693B246A82C800FBB1BA /* BaseViewController.swift */,
+				73F4ECB924727B730010A715 /* BaseAnchorViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		CF4AB32A9B7E4D2A90253752 /* Frameworks */ = {
@@ -447,6 +469,8 @@
 				735237D5245831F4002E8515 /* UIColorExtension.swift in Sources */,
 				733A66B3245D9B74003D8075 /* NSDateExtension.swift in Sources */,
 				73A4CBFA246D9C7D005980C6 /* AmuseViewController.swift in Sources */,
+				73F4ECB7247278460010A715 /* BaseViewModel.swift in Sources */,
+				73F4ECBA24727B730010A715 /* BaseAnchorViewController.swift in Sources */,
 				735237D324582ECB002E8515 /* PageContentView.swift in Sources */,
 				7343784B24646C4700697655 /* RecommendCycleView.swift in Sources */,
 				738FA93E24601B9100E4028A /* AnchorModel.swift in Sources */,

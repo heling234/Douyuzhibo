@@ -15,13 +15,13 @@ enum methodType{
 }
 
 class NetworkTool {
-    class func requestData(URLSting:String,type:methodType,parmeters:[String:NSString]? = nil, finishedCallback : @escaping (_ result: AnyObject)->()) {
+    class func requestData(URLSting:String,type:methodType,parameters:[String:NSString]? = nil, finishedCallback : @escaping (_ result: AnyObject)->()) {
         
     //1.获取类型
         //let method = type == .get ? MethodType.get :MethodType.post
         let method = type == .get ? HTTPMethod.get : HTTPMethod.post
     //2.发送网络请求
-        AF.request(URLSting,method: method,parameters: parmeters).responseJSON { (response) in
+        AF.request(URLSting,method: method,parameters: parameters).responseJSON { (response) in
        
             //3.获取数据
             guard response.value != nil else {
