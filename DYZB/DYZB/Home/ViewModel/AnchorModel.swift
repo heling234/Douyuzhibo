@@ -30,10 +30,10 @@ class AnchorModel: NSObject {
     @objc var anchor_city :String = ""
     
     
-    init(dict : [String : NSObject]) {
+    init(dict : [String : Any]) {
         super.init()
-        setValuesForKeys(dict)
         
+        setValuesForKeys(dict)
     }
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         

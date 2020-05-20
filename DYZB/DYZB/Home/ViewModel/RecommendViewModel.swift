@@ -74,7 +74,7 @@ extension RecommendViewModel{
         //  NetworkTool.requestData(URLSting:"http://capi.douyucdn.cn/api/v1/getHotCate?", type: methodType.get) { (result) in
         
             grouppress.enter()
-        loadAnchorData(URLString: "http://capi.douyucdn.cn/api/v1/getHotCate?", parameters: parameters) {
+        loadAnchorData(isGroupData:true,URLString: "http://capi.douyucdn.cn/api/v1/getHotCate?", parameters: parameters) {
             grouppress.leave()
         }
         

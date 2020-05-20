@@ -7,20 +7,20 @@
 //
 
 import UIKit
-/*
+
  
 
 class BaseViewController: UIViewController {
 //父控制器，让所有的页面继承
     var contentView:UIView?
     //增加懒加截属性
-    fileprivate lazy var animImageView:UIImageView = {
+    fileprivate lazy var animImageView:UIImageView = {[unowned self] in
         let imageView = UIImageView(image: UIImage(named: "img_loading_1"))
         imageView.center = self.view.center
-        imageView.animationImages = [UIImage(named: "img_loading_1")!,UIImage(named: "img_loading_2")!]
+        imageView.animationImages = [UIImage(named: "img_loading_1")!,UIImage(named: "img_loading_2")!] //两个图片数组
         imageView.animationDuration = 0.5
         imageView.animationRepeatCount = LONG_MAX
-        imageView.autoresizingMask = [.flexibleTopMargin,.flexibleLeftMargin]
+        imageView.autoresizingMask = [.flexibleTopMargin,.flexibleBottomMargin]
         return imageView
     }()
 
@@ -33,7 +33,7 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController{
-       func setupUI(){
+   @objc  func setupUI(){
         //1. 隐藏内容的View
         contentView?.isHidden = true
         //2.添加执行动画的UIImageView
@@ -53,4 +53,3 @@ extension BaseViewController{
 
     }
 }
- */

@@ -20,7 +20,7 @@ private let kGameCellID = "kGameCellID"
 // private let kHeaderViewID = "kHeaderViewID"
 
 
-class GameViewController: UIViewController, UICollectionViewDataSource {
+class GameViewController: BaseViewController, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return gameVM.games.count
@@ -104,8 +104,10 @@ class GameViewController: UIViewController, UICollectionViewDataSource {
 
 //设置UI界面
 extension GameViewController{
-    fileprivate func setupUI(){
-        
+  override func setupUI(){
+        super.setupUI()
+    //0.给contentView赋值
+        contentView = collectionView
     //1.将UICollectionView添加到控制顺器的View中
        view.addSubview(collectionView)
     //2.添加顶部的HeaderView
@@ -132,6 +134,8 @@ extension GameViewController{
             self.gameView.groups = tempArray
             */ //上面的简化
             self.gameView.groups = Array(self.gameVM.games[0..<10])
+            
+            self.loadDataFinished()
         }
     }
 }
